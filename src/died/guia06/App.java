@@ -8,10 +8,10 @@ public class App {
 
 	public static void main(String[] args) {
 		Alumno[] alumnos = {
-				new Alumno ("Luciano", 1),
-				new Alumno ("Yunuen", 2),
-				new Alumno ("Gabor", 3),
-				new Alumno ("Sol", 4),
+				new Alumno ("Luciano","Martinez", 1),
+				new Alumno ("Yunuen","Obrador", 2),
+				new Alumno ("Gabor", "Obrador",3),
+				new Alumno ("Sol","Di Baia", 4),
 		};
 
 		Curso[] cursos = {

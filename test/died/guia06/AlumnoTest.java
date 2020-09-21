@@ -20,7 +20,7 @@ class AlumnoTest {
 	@Test
 	void testCreditosObtenidos() {
 		llena.add(matematica);
-		Alumno alumno = new Alumno("Manuel", 1234,vacia, llena);
+		Alumno alumno = new Alumno("Manuel","Giancarelli", 1234,vacia, llena);
 		Integer obtenido = alumno.creditosObtenidos();
 		Integer esperado = 20;
 		assertEquals(esperado,obtenido);
@@ -29,7 +29,7 @@ class AlumnoTest {
 	@Test
 	void testAprobar() {
 		llena.add(matematica);
-		Alumno alumno = new Alumno("Manuel", 1234,llena,vacia);
+		Alumno alumno = new Alumno("Manuel","Giancarelli", 1234,llena,vacia);
 		alumno.aprobar(matematica);
 		assertTrue(alumno.getAprobados().contains(matematica) && !alumno.getCursando().contains(matematica));
 	}
@@ -38,7 +38,7 @@ class AlumnoTest {
 	void testInscripcionAceptada() {
 		llena.add(matematica);
 		Curso matematica2 = new Curso(2,"Matemática 02",1,3,vaciaAlumnos,20,20);
-		Alumno alumno = new Alumno("Manuel", 1234,vacia, llena);
+		Alumno alumno = new Alumno("Manuel","Giancarelli", 1234,vacia, llena);
 		alumno.inscripcionAceptada(matematica2);
 		assertTrue(alumno.getCursando().contains(matematica2));
 	}
@@ -47,7 +47,7 @@ class AlumnoTest {
 	void testInscripcionRechazada() {
 		llena.add(matematica);
 		Curso matematica3 = new Curso(2,"Matemática 02",1,3,vaciaAlumnos,20,40);
-		Alumno alumno = new Alumno("Manuel", 1234,vacia, llena);
+		Alumno alumno = new Alumno("Manuel","Giancarelli", 1234,vacia, llena);
 		alumno.inscripcionAceptada(matematica3);
 		assertFalse(alumno.getCursando().contains(matematica3));
 	}

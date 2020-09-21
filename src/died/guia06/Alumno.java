@@ -7,26 +7,29 @@ import java.util.List;
 public class Alumno implements Comparable<Alumno> {
 
 	private String nombre;
+	private String apellido;
 	private Integer nroLibreta;
 	private List<Curso> cursando;
 	private List<Curso> aprobados;
 
-	public Alumno(String nombre, Integer nroLibreta, List<Curso> cursando, List<Curso> aprobados) {
+	public Alumno(String nombre, String apellido, Integer nroLibreta, List<Curso> cursando, List<Curso> aprobados) {
 		this.nombre = nombre;
+		this.apellido = apellido;
 		this.nroLibreta = nroLibreta;
 		this.cursando = cursando;
 		this.aprobados = aprobados;
 	}
 
-	public Alumno(String nombre, Integer nroLibreta) {
+	public Alumno(String nombre, String apellido, Integer nroLibreta) {
 		this.nombre = nombre;
+		this.apellido = apellido;
 		this.nroLibreta = nroLibreta;
 		this.cursando = new ArrayList<>();
 		this.aprobados = new ArrayList<>();
 	}
 
 	public String getNombre() {
-		return nombre;
+		return nombre+" "+ apellido;
 	}
 
 	public List<Curso> getCursando() {

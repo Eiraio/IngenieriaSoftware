@@ -19,7 +19,7 @@ class CursoTest {
     @Test
     void inscribirPositivoTest() {
         llena.add(matematica);
-        Alumno alumno = new Alumno("Manuel", 1234,vacia, llena);
+        Alumno alumno = new Alumno("Francisco", "Giancarelli",1234,vacia, llena);
         Curso matematica2 = new Curso(2,"Matemática 02",1,3,vaciaAlumnos,20,20);
         Boolean retorna = matematica2.inscribir(alumno);
         assertTrue(matematica2.getInscriptos().contains(alumno) && alumno.getCursando().contains(matematica2) && retorna);
@@ -28,7 +28,7 @@ class CursoTest {
     @Test
     void inscribirNegativoTest() {
         llena.add(matematica);
-        Alumno alumno = new Alumno("Manuel", 1234,vacia, llena);
+        Alumno alumno = new Alumno("Francisco", "Giancarelli", 1234,vacia, llena);
         Curso matematica3 = new Curso(2,"Matemática 02",1,3,vaciaAlumnos,20,40);
         Boolean retorna = matematica3.inscribir(alumno);
         assertFalse(matematica3.getInscriptos().contains(alumno) || alumno.getCursando().contains(matematica3) || retorna);
@@ -38,9 +38,9 @@ class CursoTest {
 
     @Test
     void imprimirInscriptosAlfabeticamenteTest() {
-        Alumno alumno1 = new Alumno("Manuel", 3,vacia, llena);
-        Alumno alumno2 = new Alumno("María", 4,vacia, llena);
-        Alumno alumno3 = new Alumno("Juan", 2,vacia, llena);
+        Alumno alumno1 = new Alumno("Francisco", "Giancarelli", 3,vacia, llena);
+        Alumno alumno2 = new Alumno("María","Magdalena",4,vacia, llena);
+        Alumno alumno3 = new Alumno("Juan","Perez", 2,vacia, llena);
 
         matematica.inscribir(alumno1);
         matematica.inscribir(alumno2);
@@ -52,9 +52,9 @@ class CursoTest {
 
     @Test
     void imprimirInscriptosNroLibretaTest() {
-        Alumno alumno1 = new Alumno("Manuel", 3,vacia, llena);
-        Alumno alumno2 = new Alumno("María", 4,vacia, llena);
-        Alumno alumno3 = new Alumno("Juan", 2,vacia, llena);
+        Alumno alumno1 = new Alumno("Francisco", "Giancarelli", 3,vacia, llena);
+        Alumno alumno2 = new Alumno("María","Magdalena", 4,vacia, llena);
+        Alumno alumno3 = new Alumno("Juan","Perez",  2,vacia, llena);
 
         matematica.inscribir(alumno1);
         matematica.inscribir(alumno2);
@@ -70,16 +70,16 @@ class CursoTest {
         Curso lengua = new Curso(4,"Lengua",2,3,vaciaAlumnos,10,0);
         Curso ciencias = new Curso(5,"Ciencias",2,3,vaciaAlumnos,30,0);
 
-        Alumno alumno1 = new Alumno("Manuel", 3,vacia, llena);
+        Alumno alumno1 = new Alumno("Francisco", "Giancarelli", 3,vacia, llena);
         ArrayList<Curso> llena2 = new ArrayList<>();
         llena2.add(lengua);
         llena2.add(matematica);
-        Alumno alumno2 = new Alumno("María", 4,vacia, llena2);
+        Alumno alumno2 = new Alumno("María","Magdalena", 4,vacia, llena2);
         ArrayList<Curso> llena3 = new ArrayList<>();
         llena3.add(lengua);
         llena3.add(matematica);
         llena3.add(ciencias);
-        Alumno alumno3 = new Alumno("Juan", 2,vacia, llena3);
+        Alumno alumno3 = new Alumno("Juan","Perez",2,vacia, llena3);
 
         matematica.inscribir(alumno1);
         matematica.inscribir(alumno3);
@@ -90,7 +90,7 @@ class CursoTest {
 
     @Test
     void inscribirAlumnoAceptadoTest(){
-        Alumno alumno = new Alumno("Facundo", 1234,vacia, llena);
+        Alumno alumno = new Alumno("Facundo","Velazco", 1234,vacia, llena);
         Curso lengua = new Curso(4,"Lengua",2,3,vaciaAlumnos,10,0);
         try{
             lengua.inscribirAlumno(alumno);
@@ -112,7 +112,7 @@ class CursoTest {
 
     @Test
     void inscribirAlumnoRechazadoPorCreditosTest(){
-        Alumno alumno = new Alumno("Facundo", 1234,vacia, llena);
+        Alumno alumno = new Alumno("Facundo","Velazco", 1234,vacia, llena);
         Curso lengua = new Curso(4,"Lengua",2,3,vaciaAlumnos,10,50);
         try{
             lengua.inscribirAlumno(alumno);
@@ -134,10 +134,10 @@ class CursoTest {
 
     @Test
     void inscribirAlumnoRechazadoPorCupoTest(){
-        Alumno alumno = new Alumno("Facundo", 1234,vacia, llena);
-        vaciaAlumnos.add(new Alumno("Pepe",02));
-        vaciaAlumnos.add(new Alumno("Juan",03));
-        vaciaAlumnos.add(new Alumno("Gorge",04));
+        Alumno alumno = new Alumno("Facundo", "Velazco", 1234,vacia, llena);
+        vaciaAlumnos.add(new Alumno("Pepe","Marcial",02));
+        vaciaAlumnos.add(new Alumno("Juan","Perez",03));
+        vaciaAlumnos.add(new Alumno("Gorge","Lucas",04));
         Curso lengua = new Curso(4,"Lengua",2,3,vaciaAlumnos,10,0);
         try{
             lengua.inscribirAlumno(alumno);
@@ -164,7 +164,7 @@ class CursoTest {
         llena.add(arte);
         llena.add(ciencias);
         llena.add(matematica);
-        Alumno alumno = new Alumno("Facundo", 1234,llena, vacia);
+        Alumno alumno = new Alumno("Facundo", "Velazco", 1234,llena, vacia);
         Curso lengua = new Curso(4,"Lengua",2,3,vaciaAlumnos,10,0);
         try{
             lengua.inscribirAlumno(alumno);
