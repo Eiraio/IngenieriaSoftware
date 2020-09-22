@@ -29,7 +29,7 @@ public class Alumno implements Comparable<Alumno> {
 	}
 
 	public String getNombre() {
-		return nombre+" "+ apellido;
+		return apellido +" "+ nombre;
 	}
 
 	public List<Curso> getCursando() {
